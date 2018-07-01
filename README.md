@@ -2,6 +2,7 @@
 
 ## mixed model backward elimination based on p values
 
+```
 selected.names<-covariate.names
 while(length(selected.names)>=2){
   model.selected<-glmer(as.formula(paste("outcome~",paste(selected.names,collapse="+"),"+(1|id)",collapse = "")),
@@ -13,6 +14,7 @@ while(length(selected.names)>=2){
   selected.names<-setdiff(selected.names,selected.names[remove.idx])
   show(selected.names)
 }
+```
 
 ## mixed model backward elimination based on F test
 
